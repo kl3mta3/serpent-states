@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore the fascinating world of snakes across all 50 US states. Interactive map, species info, Wikipedia links, and a fun quiz.">
+  <title>Serpent States — Snakes of the United States</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐍</text></svg>">
+</head>
+<body class="snake-cursor-area">
+
+  <!-- Snake Cursor -->
+  <div id="snake-cursor">
+    <img src="snake-cursor.svg" alt="" width="32" height="32">
+  </div>
+
+  <!-- Scroll to Top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="#" class="nav-brand">
+      <span class="nav-brand-icon">🐍</span>
+      <span class="nav-brand-text">Serpent States</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#map-section">Explore Map</a></li>
+      <li><a href="#facts-section">Fun Facts</a></li>
+      <li><a href="#quiz-section">Quiz</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:1rem;">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">
+        <div class="theme-toggle-icons">
+          <span>☀️</span>
+          <span>🌙</span>
+        </div>
+        <div class="theme-toggle-thumb"></div>
+      </button>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Discover the <span>Snakes</span> of America</h1>
+      <p>Explore an interactive map of the United States to learn about the most fascinating snake species in every state — from the deserts of Arizona to the swamps of Louisiana.</p>
+      <div class="hero-buttons">
+        <a href="#map-section" class="btn btn-primary">🗺️ Explore the Map</a>
+        <a href="#quiz-section" class="btn btn-accent">🧠 Take the Quiz</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Map Section -->
+  <section class="section-alt" id="map-section">
+    <div class="section" style="max-width:1400px;">
+      <div class="section-header fade-in">
+        <span class="section-badge">🗺️ Interactive Map</span>
+        <h2>Snakes by State</h2>
+        <p>Hover over any state to see its top 3 most notable snake species, with links to learn more.</p>
+      </div>
+      <div class="map-container fade-in">
+        <div class="map-svg-wrap" id="us-map"></div>
+        <div class="info-panel" id="info-panel">
+          <div id="info-panel-content"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fun Facts Section -->
+  <section class="section" id="facts-section">
+    <div class="section-header fade-in">
+      <span class="section-badge">🌿 Did You Know?</span>
+      <h2>Fascinating Snake Facts</h2>
+      <p>These incredible creatures have been around for over 100 million years.</p>
+    </div>
+    <div class="facts-grid fade-in">
+      <div class="fact-card">
+        <div class="fact-icon">🌡️</div>
+        <h4>Cold-Blooded Marvels</h4>
+        <p>Snakes are ectothermic — they regulate body temperature using their environment. That's why you'll often find them sunbathing on warm rocks!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">👁️</div>
+        <h4>No Eyelids</h4>
+        <p>Snakes can't blink! They have a transparent scale called a "spectacle" or "brille" that protects their eyes at all times.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🦴</div>
+        <h4>Flexible Jaws</h4>
+        <p>A snake's lower jaw isn't fused — it's connected by elastic ligaments, allowing them to swallow prey much larger than their head.</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">📏</div>
+        <h4>200-400 Vertebrae</h4>
+        <p>Snakes have an incredibly flexible spine with 200 to 400 vertebrae, each with a pair of ribs. Humans have only 33!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">👃</div>
+        <h4>Smell with Their Tongue</h4>
+        <p>A snake's forked tongue collects chemical particles from the air and delivers them to the Jacobson's organ for "smelling."</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-icon">🐣</div>
+        <h4>Not All Lay Eggs</h4>
+        <p>About 30% of snake species give live birth! Rattlesnakes, boas, and garter snakes are all viviparous or ovoviviparous.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="section-alt" id="quiz-section">
+    <div class="section">
+      <div class="section-header fade-in">
+        <span class="section-badge">🧠 Challenge Yourself</span>
+        <h2>Snake Facts Quiz</h2>
+        <p>Think you know your snakes? Put your knowledge to the test!</p>
+      </div>
+      <div class="quiz-container fade-in" id="quiz-content"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <ul class="footer-links">
+      <li><a href="#map-section">Map</a></li>
+      <li><a href="#facts-section">Facts</a></li>
+      <li><a href="#quiz-section">Quiz</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Snake" target="_blank" rel="noopener">Wikipedia</a></li>
+    </ul>
+    <p>🐍 Serpent States — Built with curiosity & respect for nature.</p>
+    <p style="margin-top:0.5rem"><small>Snake data sourced from state wildlife agencies & herpetological societies.</small></p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="snake-data.js"></script>
+  <script src="us-map.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
