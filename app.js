@@ -63,16 +63,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Calculate precise geometric center for each state using getBBox
-  // We do this instead of CSS transform-box to prevent Safari/Webkit rendering bugs
+  // Convert to percentages relative to SVG viewBox to avoid CSS 'px' drifting when SVG scales
   setTimeout(() => {
     mapSvg.querySelectorAll('path').forEach(path => {
       try {
         const bbox = path.getBBox();
         const cx = bbox.x + bbox.width / 2;
         const cy = bbox.y + bbox.height / 2;
-        path.style.transformOrigin = `${cx}px ${cy}px`;
+        
+        // viewBox is "0 130 960 620"
+        const percentX = (cx / 960) * 100;
+        const percentY = ((cy - 130) / 620) * 100;
+        path.style.transformOrigin = `${percentX}% ${percentY}%`;
       } catch (e) {
-        // Fallback for paths if getBBox fails for any reason
         path.style.transformOrigin = 'center';
       }
     });
