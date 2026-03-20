@@ -75,23 +75,6 @@ function renderUSMap(container) {
     path.setAttribute('tabindex', '0');
     path.setAttribute('aria-label', abbr);
 
-    const coords = d.match(/[-\d.]+/g);
-    if (coords && coords.length > 0) {
-      let sumX = 0, sumY = 0, count = 0;
-      for (let i = 0; i < coords.length; i += 2) {
-        if (coords[i+1]) {
-          sumX += Number(coords[i]);
-          sumY += Number(coords[i+1]);
-          count++;
-        }
-      }
-      if (count > 0) {
-        const cx = sumX / count;
-        const cy = sumY / count;
-        path.style.transformOrigin = `${cx}px ${cy}px`;
-      }
-    }
-
     g.appendChild(path);
   }
 
