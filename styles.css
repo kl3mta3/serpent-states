@@ -54,10 +54,10 @@
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
   --glass-bg: rgba(30,40,30,0.6);
   --glass-border: rgba(100,130,100,0.15);
-  --map-fill: #3a5a3e;
-  --map-stroke: #4a7c59;
-  --map-hover: #8ac49a;
-  --map-hover-glow: rgba(138, 196, 154, 0.4);
+  --map-fill: #4a7551;
+  --map-stroke: #6ba37a;
+  --map-hover: #223825;
+  --map-hover-glow: rgba(34, 56, 37, 0.6);
   --quiz-correct: #2ecc71;
   --quiz-wrong: #e74c3c;
   --hero-gradient: linear-gradient(135deg, #0d120d 0%, #1a3a1e 50%, #162816 100%);
@@ -114,10 +114,9 @@ body {
 
 /* ─── Navigation ────────────────────────────────────────────────────────── */
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
   z-index: 1000;
   background: var(--glass-bg);
   backdrop-filter: blur(20px);
@@ -147,11 +146,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 800;
   font-size: 1.4rem;
-  background: linear-gradient(135deg, var(--accent), var(--amber));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: var(--amber);
 }
 
 .nav-links {
@@ -273,11 +268,7 @@ body {
 
 .hero h1 span {
   display: inline;
-  background: linear-gradient(135deg, #8ac49a, #e0b45a);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
+  color: var(--amber);
 }
 
 .hero p {
