@@ -151,6 +151,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
 }
 
 .nav-links {
@@ -271,11 +272,12 @@ body {
 }
 
 .hero h1 span {
-  display: inline-block;
+  display: inline;
   background: linear-gradient(135deg, #8ac49a, #e0b45a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: transparent;
 }
 
 .hero p {
@@ -417,8 +419,6 @@ body {
   stroke: var(--map-stroke);
   stroke-width: 1;
   transition: fill 0.3s, transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s;
-  transform-box: fill-box;
-  transform-origin: center;
   cursor: pointer;
 }
 

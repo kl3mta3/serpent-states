@@ -62,7 +62,21 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   }
 
-  resetInfoPanel();
+  // Calculate precise geometric center for each state using getBBox
+  // We do this instead of CSS transform-box to prevent Safari/Webkit rendering bugs
+  setTimeout(() => {
+    mapSvg.querySelectorAll('path').forEach(path => {
+      try {
+        const bbox = path.getBBox();
+        const cx = bbox.x + bbox.width / 2;
+        const cy = bbox.y + bbox.height / 2;
+        path.style.transformOrigin = `${cx}px ${cy}px`;
+      } catch (e) {
+        // Fallback for paths if getBBox fails for any reason
+        path.style.transformOrigin = 'center';
+      }
+    });
+  }, 100);
 
   // Attach map events using event delegation
   mapContainer.addEventListener('mouseover', (e) => {
